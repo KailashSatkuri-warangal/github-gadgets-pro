@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>GitHub AI Showcase Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <h1>GitHub AI Profile & Project Showcase</h1>
+    <p>Enter your GitHub username to preview all features.</p>
+    <div id="loader" style="display:none;">
+        <h3>Loading GitHub Data...</h3>
+    </div>
+
+    <!-- USER INPUT -->
+    <div id="input-section">
+        <input type="text" id="usernameInput" placeholder="Enter GitHub username" />
+        <button id="generateBtn">Generate Preview</button>
+    </div>
+
+    <hr />
+
+    <!-- AI PROFILE SUMMARY -->
+    <section id="ai-summary-section">
+        <h2>AI Profile Summary</h2>
+        <div id="aiSummaryPreview">No data yet</div>
+
+        <h4>Markdown Code</h4>
+        <button onclick="copyText('aiSummaryMarkdown')">Copy Markdown</button>
+        <pre id="aiSummaryMarkdown"></pre>
+
+        <h4>HTML Embed Code</h4>
+        <button onclick="copyText('aiSummaryHTML')">Copy HTML</button>
+        <pre id="aiSummaryHTML"></pre>
+    </section>
+
+    <hr />
+
+    <!-- PROJECT SHOWCASE -->
+    <section id="projects-section">
+        <h2>Top Projects Showcase</h2>
+        <div id="projectsPreview">No projects yet</div>
+
+        <h4>Markdown Code</h4>
+        <pre id="projectsMarkdown"></pre>
+
+        <h4>HTML Embed Code</h4>
+        <pre id="projectsHTML"></pre>
+    </section>
+
+    <hr />
+
+    <!-- GITHUB STATS -->
+    <section id="stats-section">
+        <h2>GitHub Stats</h2>
+        <img id="statsPreview" />
+
+        <h4>Markdown Code</h4>
+        <pre id="statsMarkdown"></pre>
+
+        <h4>HTML Embed Code</h4>
+        <pre id="statsHTML"></pre>
+    </section>
+
+    <hr />
+
+    <!-- STREAK -->
+    <section id="streak-section">
+        <h2>Contribution Streak</h2>
+        <img id="streakPreview" />
+
+        <h4>Markdown Code</h4>
+        <pre id="streakMarkdown"></pre>
+
+        <h4>HTML Embed Code</h4>
+        <pre id="streakHTML"></pre>
+    </section>
+
+    <hr />
+
+    <!-- HEATMAP -->
+    <section id="heatmap-section">
+        <h2>Contribution Heatmap</h2>
+        <img id="heatmapPreview" />
+
+        <h4>Markdown Code</h4>
+        <pre id="heatmapMarkdown"></pre>
+
+        <h4>HTML Embed Code</h4>
+        <pre id="heatmapHTML"></pre>
+    </section>
+
+    <hr />
+
+    <!-- LANGUAGES -->
+    <section id="languages-section">
+        <h2>Top Languages</h2>
+        <img id="languagesPreview" />
+
+        <h4>Markdown Code</h4>
+        <pre id="languagesMarkdown"></pre>
+
+        <h4>HTML Embed Code</h4>
+        <pre id="languagesHTML"></pre>
+    </section>
+
+    <hr />
+
+    <!-- TROPHIES -->
+    <section id="trophies-section">
+        <h2>GitHub Trophies</h2>
+        <img id="trophiesPreview" />
+
+        <h4>Markdown Code</h4>
+        <pre id="trophiesMarkdown"></pre>
+
+        <h4>HTML Embed Code</h4>
+        <pre id="trophiesHTML"></pre>
+    </section>
+
+    <hr />
+
+    <!-- BANNER -->
+    <section id="banner-section">
+        <h2>Profile Banner</h2>
+        <img id="bannerPreview" />
+
+        <h4>Markdown Code</h4>
+        <pre id="bannerMarkdown"></pre>
+
+        <h4>HTML Embed Code</h4>
+        <pre id="bannerHTML"></pre>
+    </section>
+    <section id="readme-section">
+        <h2>Full README Preview</h2>
+
+        <button onclick="copyText('readmeMarkdown')">Copy Full README</button>
+        <button onclick="downloadREADME()">Download README.md</button>
+
+        <pre id="readmeMarkdown"></pre>
+    </section>
+
+
+    <hr />
+
+    <!-- FOOTER -->
+    <footer>
+        <p>GitHub AI Showcase Dashboard</p>
+    </footer>
+
+    <!-- JS FILE (we will add logic in next step) -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>

@@ -82,8 +82,6 @@ import { getCareerRecommendation } from "../src/controllers/careerController.js"
 import { getAISummary } from "../src/controllers/aiSummaryController.js";
 import { getProjectShowcase } from "../src/controllers/projectShowcaseController.js";
 
-import { logEvent } from "../src/services/statsigService.js";
-
 const app = express();
 app.use(cors());
 
@@ -116,13 +114,7 @@ app.get("/api/productivity", getProductivityScore);
 app.get("/api/career", getCareerRecommendation);
 app.get("/api/ai-summary", getAISummary);
 app.get("/api/project-showcase", getProjectShowcase);
-app.get("/api/streak", (req, res, next) => {
-    logEvent(
-        { userID: req.query.username || "guest" },
-        "streak_widget_loaded"
-    );
-    next();
-});
+
 
 /* 🚫 DO NOT USE app.listen() */
 export default app;

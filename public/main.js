@@ -171,7 +171,6 @@ function buildFullREADME(username) {
 }
 
 function downloadREADME() {
-    statsig.logEvent("generate_dashboard_clicked");
     const content = document.getElementById("readmeMarkdown").innerText.trim();
 
     if (!content) {
@@ -186,6 +185,3 @@ function downloadREADME() {
     link.download = "README.md";
     link.click();
 }
-statsig.initialize("client-7I4F3EIIIZpnANES5LoNobJve04yC5IKNzk6pWu6Wyx", {
-    userID: "web-user"
-});

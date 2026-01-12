@@ -1,7 +1,6 @@
 import { getUserRepos } from "../services/githubService.js";
 import { generateProjectSummary } from "../services/geminiProjectService.js";
 import { getCache, setCache } from "../utils/cache.js";
-import { logEvent } from "../services/statsigService.js";
 
 export const getProjectShowcase = async (req, res) => {
     try {
@@ -89,9 +88,3 @@ Tone: Professional, confident
         });
     }
 };
-logEvent(
-    { userID: username },
-    "project_showcase_loaded",
-    projects.length,
-    { repos: projects.map(p => p.name).join(", ") }
-);

@@ -6,8 +6,11 @@
     <title>GitHub AI Showcase Dashboard</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/statsig-js/build/statsig.min.js"></script>
-
+    <!-- Vercel Web Analytics -->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
 <body>
@@ -170,12 +173,14 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>GitHub AI Showcase Dashboard</p>
+        <p>GitHub AI Showcase Dashboard &copy; 2025</p>
+        <p>Powered by
+            <a href="https://github.com/kailashsatkuri-warangal" target="_blank">Statsig</a>
+        </p>
     </footer>
 
     <!-- JS FILE (we will add logic in next step) -->
     <script src="main.js"></script>
-
 </body>
 
 </html>

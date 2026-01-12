@@ -186,10 +186,6 @@ function downloadREADME() {
     link.download = "README.md";
     link.click();
 }
-statsig.initialize(
-    "client-7I4F3EIIIZpnANES5LoNobJve04yC5IKNzk6pWu6Wyx",
-    { userID: "dashboard-user" },
-    {
-        environment: { tier: "production" }
-    }
-);
+statsig.initialize("client-7I4F3EIIIZpnANES5LoNobJve04yC5IKNzk6pWu6Wyx", {
+    userID: "web-user"
+});

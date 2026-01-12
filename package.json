@@ -16,6 +16,7 @@
     "@google/genai": "^1.35.0",
     "@statsig/react-bindings": "^3.31.1",
     "@statsig/session-replay": "^3.31.1",
+    "@statsig/statsig-node-core": "^0.14.1",
     "@statsig/web-analytics": "^3.31.1",
     "@vercel/analytics": "^1.6.1",
     "axios": "^1.13.2",

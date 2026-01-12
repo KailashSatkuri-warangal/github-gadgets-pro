@@ -1,6 +1,7 @@
 import { getFullStats } from "./statsController.js";
 import { generateProfileSummary } from "../services/geminiService.js";
 import { getUserRepos } from "../services/githubService.js";
+import { logEvent } from "../services/statsigService.js";
 
 export const getAISummary = async (req, res) => {
     try {
@@ -67,3 +68,9 @@ Requirements:
         res.status(500).send("Failed to generate AI summary");
     }
 };
+logEvent(
+    { userID: stats.profile.login },
+    "ai_summary_generated",
+    1,
+    { username: stats.profile.login }
+);

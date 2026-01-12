@@ -1,18 +1,19 @@
 {
+    "version": 2,
     "builds": [
         {
-            "src": "/api/index.js",
+            "src": "server.js",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/api/index.js"
+            "dest": "server.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/public/$1"
         }
-    ],
-    "env": {
-        "GITHUB_TOKEN": "@github-token",
-        "GEMINI_API_KEY": "@GEMINI_API_KEY"
-    }
+    ]
 }

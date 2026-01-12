@@ -67,7 +67,7 @@
 
 import express from "express";
 import cors from "cors";
-
+import { Analytics } from "@vercel/analytics/next"
 import { getFullStats } from "../src/controllers/statsController.js";
 import { renderStats } from "../src/renderers/statsRenderer.js";
 import { getStatsSVG } from "../src/controllers/svgController.js";
@@ -115,6 +115,6 @@ app.get("/api/productivity", getProductivityScore);
 app.get("/api/career", getCareerRecommendation);
 app.get("/api/ai-summary", getAISummary);
 app.get("/api/project-showcase", getProjectShowcase);
-
+app.use(Analytics);
 /* 🚫 DO NOT USE app.listen() */
 export default app;

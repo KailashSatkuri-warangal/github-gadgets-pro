@@ -1,3 +1,5 @@
+const BASE_URL = "https://github-gadgets-pro.vercel.app";
+
 document.getElementById("generateBtn").addEventListener("click", loadAll);
 
 function getUsername() {
@@ -55,7 +57,7 @@ async function loadAll() {
     showLoader();
 
     /* ---------- AI SUMMARY ---------- */
-    const aiRes = await fetch(`/api/ai-summary?username=${username}`);
+    const aiRes = await fetch(`${BASE_URL}/api/ai-summary?username=${username}`);
     const aiData = await aiRes.json();
 
     document.getElementById("aiSummaryPreview").innerText = aiData.aiSummary;
@@ -65,7 +67,7 @@ async function loadAll() {
         `<p>${aiData.aiSummary}</p>`;
 
     /* ---------- PROJECT SHOWCASE ---------- */
-    const projRes = await fetch(`/api/project-showcase?username=${username}`);
+    const projRes = await fetch(`${BASE_URL}/api/project-showcase?username=${username}`);
     const projData = await projRes.json();
 
     const projectContainer = document.getElementById("projectsPreview");
@@ -119,7 +121,7 @@ async function loadAll() {
     };
 
     for (const key in widgets) {
-        const imgUrl = `/api/${key}?username=${username}`;
+        const imgUrl = `${BASE_URL}/api/${key}?username=${username}`;
 
         document.getElementById(`${key}Preview`).src = imgUrl;
 
